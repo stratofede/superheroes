@@ -4,26 +4,33 @@
             <mat-form-field appearance="standard">
                 <mat-label>Super Hero Name</mat-label>
                 <input formControlName="name" matInput appUppercase>
+                <mat-icon matSuffix>badge</mat-icon>
                 <mat-error *ngIf="superHeroeForm.get('name').hasError('required')">
                     You must give an awesome name to your hero
                 </mat-error>
             </mat-form-field>
             <mat-form-field appearance="standard">
+                <span matPrefix>IQ: &nbsp;</span>
                 <mat-label>Intelligence</mat-label>
-                <input formControlName="intelligence" matInput>
+                <input type="number" formControlName="intelligence" matInput>
+                <mat-icon matSuffix>self_improvement</mat-icon>
             </mat-form-field>
         </div>
         <div class="row-container">
             <mat-form-field appearance="standard">
                 <mat-label>Strength</mat-label>
+                <span matPrefix>N: &nbsp;</span>
                 <input formControlName="strength" matInput>
+                <mat-icon type="number" matSuffix>fitness_center</mat-icon>
                 <mat-error *ngIf="superHeroeForm.get('strength').hasError('required')">
                     This hero has not strength value!
                 </mat-error>
             </mat-form-field>
             <mat-form-field appearance="standard">
+                <span matPrefix>Km/h: &nbsp;</span>
                 <mat-label>Speed</mat-label>
-                <input formControlName="speed" matInput>
+                <input type="number" formControlName="speed" matInput>
+                <mat-icon matSuffix>directions_run</mat-icon>
             </mat-form-field>
         </div>
         <div class="row-container">
@@ -35,6 +42,7 @@
                         {{ gender }}
                     </mat-option>
                 </mat-select>
+                <mat-icon matSuffix>transgender</mat-icon>
                 <mat-error *ngIf="superHeroeForm.get('gender').hasError('required')">
                     This hero has not gender value!
                 </mat-error>
@@ -47,6 +55,7 @@
                         {{ race }}
                     </mat-option>
                 </mat-select>
+                <mat-icon matSuffix>groups</mat-icon>
                 <mat-error *ngIf="superHeroeForm.get('race').hasError('required')">
                     Which kind of race this hero is?
                 </mat-error>
@@ -55,12 +64,16 @@
         </div>
         <div class="row-container">
             <mat-form-field appearance="standard">
+                <span matPrefix>Mts: &nbsp;</span>
                 <mat-label>Height</mat-label>
-                <input formControlName="height" matInput>
+                <input type="number" formControlName="height" matInput>
+                <mat-icon matSuffix>emoji_people</mat-icon>
             </mat-form-field>
             <mat-form-field appearance="standard">
                 <mat-label>Weight</mat-label>
-                <input formControlName="weight" matInput>
+                <span matPrefix>Kg: &nbsp;</span>
+                <input type="number" formControlName="weight" matInput>
+                <mat-icon matSuffix>monitor_weight</mat-icon>
             </mat-form-field>
         </div>
         

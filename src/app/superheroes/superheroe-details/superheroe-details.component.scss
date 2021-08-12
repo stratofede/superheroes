@@ -17,4 +17,19 @@
         }
     }
 
+    .mat-form-field {
+        min-width: 255px;
+    }
+
+}
+
+@media (max-width: 599px) {
+    .details-container {
+        .form-container {
+            .row-container {
+                flex-direction: column;
+            }
+        }
+    
+    }
 }
