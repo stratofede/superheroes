@@ -10,9 +10,7 @@ export function formatName(val: string): string {
 })
 export class UppercaseDirective {
 
-  constructor(private control: NgControl) {
-    console.log('Directiva llamada');
-  }
+  constructor(private control: NgControl) {}
 
     @HostListener('input', ['$event'])
     public onInput(): void {
