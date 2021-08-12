@@ -1,0 +1,9 @@
+.controls-container{
+    display: flex;
+    justify-content: space-between;
+    
+    .control-button {
+        height: 35px;
+        align-self: center;
+    }
+}

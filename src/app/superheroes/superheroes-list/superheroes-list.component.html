@@ -1,0 +1,15 @@
+
+<div class="controls-container">
+  <app-search 
+      (dataSource)="searchSuperHeroe($event)">
+  </app-search>
+  <button class="button control-button" mat-button color="primary"
+      (click)="addHero()">Add Hero!</button>
+</div>
+  <app-item-list *ngIf="dataSource"
+      [displayedColumns]="columns"
+      [actionsEnabled]="['edit', 'delete']"
+      [dataSource]="dataSource"
+      (edit)="editHeroe($event)"
+      (delete)="deleteHeroe($event)">
+  </app-item-list>

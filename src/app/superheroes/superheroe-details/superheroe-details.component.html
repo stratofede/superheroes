@@ -1,0 +1,75 @@
+<div class="details-container">
+    <form [formGroup]="superHeroeForm" class="form-container" (ngSubmit)="onSubmit()">
+        <div class="row-container">
+            <mat-form-field appearance="standard">
+                <mat-label>Super Hero Name</mat-label>
+                <input formControlName="name" matInput appUppercase>
+                <mat-error *ngIf="superHeroeForm.get('name').hasError('required')">
+                    You must give an awesome name to your hero
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="standard">
+                <mat-label>Intelligence</mat-label>
+                <input formControlName="intelligence" matInput>
+            </mat-form-field>
+        </div>
+        <div class="row-container">
+            <mat-form-field appearance="standard">
+                <mat-label>Strength</mat-label>
+                <input formControlName="strength" matInput>
+                <mat-error *ngIf="superHeroeForm.get('strength').hasError('required')">
+                    This hero has not strength value!
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="standard">
+                <mat-label>Speed</mat-label>
+                <input formControlName="speed" matInput>
+            </mat-form-field>
+        </div>
+        <div class="row-container">
+            <mat-form-field appearance="standard">
+                <mat-label>Gender</mat-label>
+                <mat-select formControlName="gender">
+                    <mat-option>Select</mat-option>
+                    <mat-option *ngFor="let gender of genderOptions" [value]="gender">
+                        {{ gender }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="superHeroeForm.get('gender').hasError('required')">
+                    This hero has not gender value!
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="standard">
+                <mat-label>Race</mat-label>
+                <mat-select formControlName="race">
+                    <mat-option>Select</mat-option>
+                    <mat-option *ngFor="let race of raceOptions" [value]="race">
+                        {{ race }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="superHeroeForm.get('race').hasError('required')">
+                    Which kind of race this hero is?
+                </mat-error>
+            </mat-form-field>
+    
+        </div>
+        <div class="row-container">
+            <mat-form-field appearance="standard">
+                <mat-label>Height</mat-label>
+                <input formControlName="height" matInput>
+            </mat-form-field>
+            <mat-form-field appearance="standard">
+                <mat-label>Weight</mat-label>
+                <input formControlName="weight" matInput>
+            </mat-form-field>
+        </div>
+        
+        <div class="row-buttons-container">
+            <button class="button control-button" mat-button color="primary" 
+                type="button" (click)="cancel()">Cancel</button>
+            
+            <button class="button control-button" mat-button color="primary"
+                type="submit">{{ action }}</button>
+        </div>
+    </form>
+</div>

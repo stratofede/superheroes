@@ -1,0 +1,18 @@
+<div class="modal-container">
+    <div class="modal-title">
+        <span>{{ data?.title }}</span>
+    </div>
+
+    <div class="modal-description">
+        <span>{{ data?.description }}</span>
+    </div>
+
+        
+    <div class="row-buttons-container">
+        <button class="button control-button" mat-button color="primary" 
+            type="button" (click)="onAction(false)">{{ data?.btnCancel }}</button>
+        
+        <button class="button control-button" mat-button color="primary"
+            type="button" (click)="onAction(true)">{{ data?.btnAccept }}</button>
+    </div>
+</div>

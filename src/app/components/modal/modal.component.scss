@@ -1,0 +1,25 @@
+.modal-container {
+    padding: 15px;
+    width: 360px;
+    height: fit-content;
+    position: relative;
+    .modal-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .modal-description {
+        font-size: 14px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .row-buttons-container {
+        justify-content: space-evenly;
+        display: flex;
+        max-width: 400px;
+        margin: auto;
+        .control-button {
+            width: 120px;
+        }
+    }
+}

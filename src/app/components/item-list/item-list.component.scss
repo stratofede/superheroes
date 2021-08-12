@@ -1,0 +1,11 @@
+.table-container {
+    width: 100%;
+    .actions-container {
+        display: flex;
+        .action-icon {
+            cursor: pointer;
+            font-size: 20px;
+            color: grey;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+<div class="search-container">
+    <form [formGroup]="searchForm">
+        <mat-form-field appearance="standard">
+            <mat-label>Search</mat-label>
+            <div class="input-container">
+                <input formControlName="search" name="search" matInput #searchInput>
+                <mat-icon *ngIf="searchInput.value.length > 0" 
+                        (click)="searchSuperHeroe(); searchInput.value =''"
+                        class="search-icon">delete</mat-icon>
+                
+            </div>
+        </mat-form-field>
+    </form>
+</div>

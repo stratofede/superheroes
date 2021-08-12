@@ -1,0 +1,13 @@
+.search-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .input-container{
+        display: flex;
+        .search-icon {
+            cursor: pointer;
+            font-size: 20px;
+            color: grey;
+        }
+    }
+}

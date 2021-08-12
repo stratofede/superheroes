@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SuperheroeComponent } from './superheroes-module/superheroe/superheroe.component';
-import { SuperheroesComponent } from './superheroes-module/superheroes/superheroes.component';
 
 
 const routes: Routes = [
@@ -12,12 +10,8 @@ const routes: Routes = [
   },
   { 
     path: 'superheroes', 
-    component: SuperheroesComponent 
+    loadChildren: () => import('./superheroes/superheroes.module').then(m => m.SuperheroesModule) 
   },
-  { 
-    path: 'superheroe/:id', 
-    component: SuperheroeComponent 
-  }
 ];
 
 @NgModule({

@@ -1,6 +1,9 @@
+<app-loading *ngIf="loading"></app-loading>
 <mat-toolbar>
   <span>Super Heroes Manager</span>
 </mat-toolbar>
-<div fxLayout="row">
+
+<div class="main-container">
   <router-outlet></router-outlet>
 </div>
+<notifier-container></notifier-container>
