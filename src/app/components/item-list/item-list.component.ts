@@ -10,7 +10,8 @@ import { MatTableDataSource } from '@angular/material/table';
 export class ItemListComponent implements OnInit, AfterViewInit, OnChanges {
 
   @ViewChild(MatPaginator, {static:false}) paginator: MatPaginator;
-  @Input() displayedColumns: Array<string>;
+  @Input() columnsDefinitions: Array<any>;
+  @Input() columnsItems: Array<any>;
   @Input() actionsEnabled: Array<string>;
   @Input() dataSource: MatTableDataSource<Array<Object>>;
   @Output() edit: EventEmitter<Object>;

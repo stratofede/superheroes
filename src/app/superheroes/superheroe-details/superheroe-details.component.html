@@ -3,59 +3,59 @@
         <div class="row-container">
             <mat-form-field appearance="standard">
                 <mat-label>Super Hero Name</mat-label>
-                <input formControlName="name" matInput appUppercase>
-                <mat-icon matSuffix>badge</mat-icon>
+                <mat-icon class="prefix-icon" matPrefix>badge</mat-icon>
+                <input formControlName="name" matInput appUppercase autocomplete="off">
                 <mat-error *ngIf="superHeroeForm.get('name').hasError('required')">
                     You must give an awesome name to your hero
                 </mat-error>
             </mat-form-field>
             <mat-form-field appearance="standard">
-                <span matPrefix>IQ: &nbsp;</span>
                 <mat-label>Intelligence</mat-label>
-                <input type="number" formControlName="intelligence" matInput>
-                <mat-icon matSuffix>self_improvement</mat-icon>
+                <mat-icon class="prefix-icon" matPrefix>self_improvement</mat-icon>
+                <input type="number" formControlName="intelligence" matInput autocomplete="off">
+                <span matSuffix>IQ</span>
             </mat-form-field>
         </div>
         <div class="row-container">
             <mat-form-field appearance="standard">
                 <mat-label>Strength</mat-label>
-                <span matPrefix>N: &nbsp;</span>
-                <input formControlName="strength" matInput>
-                <mat-icon type="number" matSuffix>fitness_center</mat-icon>
+                <mat-icon class="prefix-icon" matPrefix>fitness_center</mat-icon>
+                <input type="number" formControlName="strength" matInput autocomplete="off">
+                <span matSuffix>N</span>
                 <mat-error *ngIf="superHeroeForm.get('strength').hasError('required')">
                     This hero has not strength value!
                 </mat-error>
             </mat-form-field>
             <mat-form-field appearance="standard">
-                <span matPrefix>Km/h: &nbsp;</span>
                 <mat-label>Speed</mat-label>
-                <input type="number" formControlName="speed" matInput>
-                <mat-icon matSuffix>directions_run</mat-icon>
+                <mat-icon class="prefix-icon" matPrefix>directions_run</mat-icon>
+                <input type="number" formControlName="speed" matInput autocomplete="off">
+                <span matSuffix>Km/h</span>
             </mat-form-field>
         </div>
         <div class="row-container">
             <mat-form-field appearance="standard">
                 <mat-label>Gender</mat-label>
-                <mat-select formControlName="gender">
+                <mat-icon class="prefix-icon" matPrefix>transgender</mat-icon>
+                <mat-select formControlName="gender" autocomplete="off">
                     <mat-option>Select</mat-option>
                     <mat-option *ngFor="let gender of genderOptions" [value]="gender">
                         {{ gender }}
                     </mat-option>
                 </mat-select>
-                <mat-icon matSuffix>transgender</mat-icon>
                 <mat-error *ngIf="superHeroeForm.get('gender').hasError('required')">
                     This hero has not gender value!
                 </mat-error>
             </mat-form-field>
             <mat-form-field appearance="standard">
                 <mat-label>Race</mat-label>
-                <mat-select formControlName="race">
+                <mat-icon class="prefix-icon" matPrefix>groups</mat-icon>
+                <mat-select formControlName="race" autocomplete="off">
                     <mat-option>Select</mat-option>
                     <mat-option *ngFor="let race of raceOptions" [value]="race">
                         {{ race }}
                     </mat-option>
                 </mat-select>
-                <mat-icon matSuffix>groups</mat-icon>
                 <mat-error *ngIf="superHeroeForm.get('race').hasError('required')">
                     Which kind of race this hero is?
                 </mat-error>
@@ -64,16 +64,16 @@
         </div>
         <div class="row-container">
             <mat-form-field appearance="standard">
-                <span matPrefix>Mts: &nbsp;</span>
                 <mat-label>Height</mat-label>
-                <input type="number" formControlName="height" matInput>
-                <mat-icon matSuffix>emoji_people</mat-icon>
+                <mat-icon class="prefix-icon" matPrefix>emoji_people</mat-icon>
+                <input type="number" formControlName="height" matInput autocomplete="off">
+                <span matSuffix>Mts</span>
             </mat-form-field>
             <mat-form-field appearance="standard">
                 <mat-label>Weight</mat-label>
-                <span matPrefix>Kg: &nbsp;</span>
-                <input type="number" formControlName="weight" matInput>
-                <mat-icon matSuffix>monitor_weight</mat-icon>
+                <mat-icon class="prefix-icon" matPrefix>monitor_weight</mat-icon>
+                <input type="number" formControlName="weight" matInput autocomplete="off">
+                <span matSuffix>Kg</span>
             </mat-form-field>
         </div>
         

@@ -7,7 +7,8 @@
       (click)="addHero()">Add Hero!</button>
 </div>
   <app-item-list *ngIf="dataSource"
-      [displayedColumns]="columns"
+      [columnsDefinitions]="columnsDefinitions"
+      [columnsItems]="columnsItems"
       [actionsEnabled]="['edit', 'delete']"
       [dataSource]="dataSource"
       (edit)="editHeroe($event)"

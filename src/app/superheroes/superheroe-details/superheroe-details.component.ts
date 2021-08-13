@@ -10,7 +10,7 @@ import { SuperHeroe } from 'src/app/models/superheroe.model';
 import { SuperheroesService } from 'src/app/services/superheroes.service';
 import { GenderConstants } from 'src/app/constants/gender.constants';
 import { RaceConstants } from 'src/app/constants/race.constants';
-import { NotifierService } from 'angular-notifier';
+import { NotificationsService } from 'src/app/services/notifications.service';
 
 @Component({
   selector: 'app-superheroe-details',
@@ -26,13 +26,16 @@ export class SuperheroeDetailsComponent implements OnInit, CanComponentDeactivat
   isSubmitted = false;
   action = 'Add hero!';
 
+  
+
+
   constructor(
     private superHeroesService: SuperheroesService,
+    private notificationService: NotificationsService,
     private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private dialog: MatDialog,
-    private readonly notifier: NotifierService
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -88,13 +91,13 @@ export class SuperheroeDetailsComponent implements OnInit, CanComponentDeactivat
       if (!this.superHeroe?.id) {
           this.superHeroesService.createSuperHeroe(this.superHeroeForm.value).subscribe(resp =>{
             this.isSubmitted = true;
-            this.notifier.notify('success', 'Awesome! Your superhero is ready to save the world!');
+            this.notificationService.successNotification('Awesome! Your superhero is ready to save the world!');
             this.router.navigate(['/superheroes']);
           })
       } else {
         this.superHeroesService.editSuperHeroe(this.superHeroe.id, this.superHeroeForm.value).subscribe(resp =>{
           this.isSubmitted = true;
-          this.notifier.notify('success', 'Awesome! Your superhero has been edited!');
+          this.notificationService.successNotification('Awesome! Your superhero has been edited!');
           this.router.navigate(['/superheroes']);
         })
       }

@@ -5,6 +5,10 @@
         .row-container {
             justify-content: space-between;
             display: flex;
+            .prefix-icon {
+                cursor: pointer;
+                margin-right: 10px;
+            }
         }
         .row-buttons-container {
             justify-content: space-evenly;

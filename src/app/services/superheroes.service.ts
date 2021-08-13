@@ -7,6 +7,14 @@ import { from, Observable } from 'rxjs';
 
 import { SuperHeroe } from '../models/superheroe.model';
 
+const compareFn = (a, b) => {
+  if (a.name < b.name)
+    return -1;
+  if (a.name > b.name)
+    return 1;
+  return 0;
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,7 +29,8 @@ export class SuperheroesService {
   getSuperHeroes(): Observable<Array<SuperHeroe>> {
     const url = `${this.baseURL}/superheroes.json`;
     return this.http.get<Array<SuperHeroe>>(url).pipe(
-      map( this.jsonToObjectArray )
+      map( this.jsonToObjectArray ),
+      map( items => items.sort(compareFn))
     );
   }
 
@@ -35,6 +44,7 @@ export class SuperheroesService {
       switchMap(() => {
         return this.http.get(`${this.baseURL}/superheroes.json`).pipe(
           map( this.jsonToObjectArray ),
+          map( items => items.sort(compareFn)),
           map( (items: Array<SuperHeroe>) => { 
             return items.filter((item: SuperHeroe) => {
               if (item.name.toLowerCase().includes(filter.toLowerCase())) {
@@ -80,7 +90,6 @@ export class SuperheroesService {
                         );
       array.push(obj);
     });
-    console.log(array);
     return array;
   }
 }

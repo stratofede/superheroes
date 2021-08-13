@@ -9,15 +9,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalComponent } from './components/modal/modal.component';
-import { NotifierModule } from 'angular-notifier';
 import { LoadingComponent } from './components/loading/loading.component';
 import { HttpRequestsInterceptor } from './interceptors/http-requests.interceptor';
+import { ToastAlertComponent } from './components/toast-alert/toast-alert.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ModalComponent,
-    LoadingComponent
+    LoadingComponent,
+    ToastAlertComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -27,14 +28,12 @@ import { HttpRequestsInterceptor } from './interceptors/http-requests.intercepto
     FMaterialModule,
     AppRoutingModule,
     FlexLayoutModule,
-    HttpClientModule,
-    NotifierModule
+    HttpClientModule
   ],
   exports: [
     FormsModule,
     ReactiveFormsModule,
-    FMaterialModule,
-    NotifierModule
+    FMaterialModule
   ],
   providers: [
     {

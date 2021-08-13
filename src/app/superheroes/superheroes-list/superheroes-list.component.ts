@@ -2,12 +2,12 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { NotifierService } from 'angular-notifier';
 import { Observable } from 'rxjs';
 import { ModalComponent } from 'src/app/components/modal/modal.component';
 import { SuperHeroeConstants } from 'src/app/constants/tableColumns.constants';
 import { ModalActionData } from 'src/app/models/modal';
 import { SuperHeroe } from 'src/app/models/superheroe.model';
+import { NotificationsService } from 'src/app/services/notifications.service';
 import { SuperheroesService } from 'src/app/services/superheroes.service';
 
 @Component({
@@ -21,11 +21,12 @@ export class SuperheroesListComponent implements OnInit {
 
   dataSource: MatTableDataSource<SuperHeroe>;
   superHeroesList$: Observable<Array<SuperHeroe>>;
-  columns = SuperHeroeConstants.SUPERHERO_TABLE_COLUMNS;
+  columnsDefinitions = SuperHeroeConstants.SUPERHERO_TABLE_COL_DEF;
+  columnsItems = SuperHeroeConstants.SUPERHERO_TABLE_COL_ITEM;
 
   constructor(
     private superHeroesService: SuperheroesService,
-    private readonly notifier: NotifierService,
+    private notificationService: NotificationsService,
     private dialog: MatDialog,
     private router: Router
   ) {
@@ -57,7 +58,7 @@ export class SuperheroesListComponent implements OnInit {
       if (deleteSuperHeroe) {
         this.superHeroesService.deleteSuperHeroe(superHeroe.id).subscribe(
           (success) => {
-            this.notifier.notify('success', 'Your superhero has been seen burning his suit!');
+            this.notificationService.successNotification('Awesome! Your superhero has been edited!');
             this.getAllSuperHeroes();
           }
         );
