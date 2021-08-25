@@ -20,7 +20,6 @@ export class SuperheroesListComponent implements OnInit {
   @ViewChild('searchInput', {static: false}) searchInput : ElementRef;
 
   dataSource: MatTableDataSource<SuperHeroe>;
-  superHeroesList$: Observable<Array<SuperHeroe>>;
   columnsDefinitions = SuperHeroeConstants.SUPERHERO_TABLE_COL_DEF;
   columnsItems = SuperHeroeConstants.SUPERHERO_TABLE_COL_ITEM;
 
